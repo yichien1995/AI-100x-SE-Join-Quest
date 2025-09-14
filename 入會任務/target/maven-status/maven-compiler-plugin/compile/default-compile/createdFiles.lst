@@ -1,0 +1,7 @@
+com\order\OrderSummary.class
+com\order\PromotionConfig.class
+com\order\Product.class
+com\order\BuyOneGetOneConfig.class
+com\order\OrderService.class
+com\order\Order.class
+com\order\DoubleElevenConfig.class

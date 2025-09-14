@@ -1,0 +1,5 @@
+# Created at 2025-09-06T21:24:50.973
+Boot Manifest-JAR contains absolute paths in classpath 'D:\waterball\ai_100x\AI-100x-SE-Official\入會任務\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

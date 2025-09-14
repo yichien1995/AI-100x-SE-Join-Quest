@@ -1,0 +1,219 @@
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - exactly 10 items of same product [90m# 1111_order.feature:7[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                        [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mWhen [0m[32ma customer places an order with:[0m                              [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 10       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                  [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | totalAmount |
+    | 800         |
+  [32mAnd [0m[32mthe customer should receive:[0m                                   [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 10       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - 12 items of same product [90m# 1111_order.feature:19[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mWhen [0m[32ma customer places an order with:[0m                      [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 12       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                          [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | totalAmount |
+    | 1000        |
+  [32mAnd [0m[32mthe customer should receive:[0m                           [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 12       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - 27 items of same product [90m# 1111_order.feature:31[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mWhen [0m[32ma customer places an order with:[0m                      [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 27       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                          [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | totalAmount |
+    | 2300        |
+  [32mAnd [0m[32mthe customer should receive:[0m                           [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 27       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - 10 different products (no discount) [90m# 1111_order.feature:43[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                           [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mWhen [0m[32ma customer places an order with:[0m                                 [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 商品A         | 1        | 100       |
+    | 商品B         | 1        | 100       |
+    | 商品C         | 1        | 100       |
+    | 商品D         | 1        | 100       |
+    | 商品E         | 1        | 100       |
+    | 商品F         | 1        | 100       |
+    | 商品G         | 1        | 100       |
+    | 商品H         | 1        | 100       |
+    | 商品I         | 1        | 100       |
+    | 商品J         | 1        | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                     [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | totalAmount |
+    | 1000        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                      [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 商品A         | 1        |
+    | 商品B         | 1        |
+    | 商品C         | 1        |
+    | 商品D         | 1        |
+    | 商品E         | 1        |
+    | 商品F         | 1        |
+    | 商品G         | 1        |
+    | 商品H         | 1        |
+    | 商品I         | 1        |
+    | 商品J         | 1        |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - mixed quantities [90m# 1111_order.feature:73[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m        [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mWhen [0m[32ma customer places an order with:[0m              [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 15       | 100       |
+    | 帽子          | 5        | 200       |
+    | 手套          | 20       | 50        |
+  [32mThen [0m[32mthe order summary should be:[0m                  [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | totalAmount |
+    | 3100        |
+  [32mAnd [0m[32mthe customer should receive:[0m                   [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 15       |
+    | 帽子          | 5        |
+    | 手套          | 20       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - multiple sets of 10 [90m# 1111_order.feature:89[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m           [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mWhen [0m[32ma customer places an order with:[0m                 [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 25       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                     [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | totalAmount |
+    | 2100        |
+  [32mAnd [0m[32mthe customer should receive:[0m                      [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 25       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion combined with threshold discount [90m# 1111_order.feature:101[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                      [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m              [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 2000      | 200      |
+  [32mWhen [0m[32ma customer places an order with:[0m                            [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 20       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 1600           | 0        | 1600        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                 [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 20       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion combined with threshold discount - meets threshold [90m# 1111_order.feature:116[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                                        [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m                                [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 1500      | 200      |
+  [32mWhen [0m[32ma customer places an order with:[0m                                              [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 20       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                                  [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 1600           | 200      | 1400        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                                   [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 20       |
+
+@double_eleven_promotion
+Scenario: Three promotions stacked - buy one get one + double eleven + threshold discount [90m# 1111_order.feature:131[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                                             [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe buy one get one promotion for cosmetics is active[0m                               [90m# com.order.OrderSteps.the_buy_one_get_one_promotion_for_cosmetics_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m                                     [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 2000      | 300      |
+  [32mWhen [0m[32ma customer places an order with:[0m                                                   [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | category  | quantity | unitPrice |
+    | 口紅          | cosmetics | 15       | 200       |
+    | 襪子          | apparel   | 20       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                                       [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 4400           | 300      | 4100        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                                        [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 口紅          | 16       |
+    | 襪子          | 20       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - boundary test (exactly at threshold) [90m# 1111_order.feature:149[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                            [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m                    [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 1600      | 200      |
+  [32mWhen [0m[32ma customer places an order with:[0m                                  [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 20       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                      [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 1600           | 200      | 1400        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                       [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 20       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - just below threshold [90m# 1111_order.feature:164[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m            [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m    [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 1600      | 200      |
+  [32mWhen [0m[32ma customer places an order with:[0m                  [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 19       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                      [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 1700           | 200      | 1500        |
+  [32mAnd [0m[32mthe customer should receive:[0m                       [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 19       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion with different threshold amounts [90m# 1111_order.feature:179[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                      [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m              [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 1000      | 100      |
+  [32mWhen [0m[32ma customer places an order with:[0m                            [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 15       | 100       |
+  [32mThen [0m[32mthe order summary should be:[0m                                [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 1300           | 100      | 1200        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                 [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 15       |
+
+@double_eleven_promotion
+Scenario: Double eleven promotion - multiple products with different discount groups [90m# 1111_order.feature:194[0m
+  [32mGiven [0m[32mthe double eleven promotion is active[0m                                        [90m# com.order.DoubleElevenOrderSteps.the_double_eleven_promotion_is_active()[0m
+  [32mAnd [0m[32mthe threshold discount promotion is configured:[0m                                [90m# com.order.OrderSteps.the_threshold_discount_promotion_is_configured(io.cucumber.datatable.DataTable)[0m
+    | threshold | discount |
+    | 3000      | 500      |
+  [32mWhen [0m[32ma customer places an order with:[0m                                              [90m# com.order.OrderSteps.a_customer_places_an_order_with(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity | unitPrice |
+    | 襪子          | 25       | 100       |
+    | 帽子          | 15       | 200       |
+    | 手套          | 5        | 50        |
+  [32mThen [0m[32mthe order summary should be:[0m                                                  [90m# com.order.OrderSteps.the_order_summary_should_be(io.cucumber.datatable.DataTable)[0m
+    | originalAmount | discount | totalAmount |
+    | 4950           | 500      | 4450        |
+  [32mAnd [0m[32mthe customer should receive:[0m                                                   [90m# com.order.OrderSteps.the_customer_should_receive(io.cucumber.datatable.DataTable)[0m
+    | productName | quantity |
+    | 襪子          | 25       |
+    | 帽子          | 15       |
+    | 手套          | 5        |

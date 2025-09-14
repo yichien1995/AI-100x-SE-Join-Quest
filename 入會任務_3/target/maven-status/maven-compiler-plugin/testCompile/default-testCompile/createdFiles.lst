@@ -1,0 +1,3 @@
+com\example\chinesechess\stepdefs\ChineseChessStepDefinitions.class
+com\example\chinesechess\GeneralMoveTest.class
+com\example\chinesechess\ChineseChessTestRunner.class
